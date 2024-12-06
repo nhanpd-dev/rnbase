@@ -1,4 +1,2 @@
-export * from './tabNavigator'
-export * from './appNavigator'
+export * from './AppNavigator'
 export * from './utils'
-export * from './constants'

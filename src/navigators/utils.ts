@@ -5,9 +5,11 @@ import {
   NavigationState,
   NavigationAction,
   createNavigationContainerRef,
+  NavigatorScreenParams,
 } from '@react-navigation/native'
+import { AuthenticationNavigatorParamList } from './AuthenticationNavigator'
+import { MainNavigatorParamList } from './MainNavigator'
 
-/* eslint-disable */
 export const RootNavigation = {
   navigate(_name: string, _params?: any) {},
   goBack() {},
@@ -17,9 +19,15 @@ export const RootNavigation = {
   },
   dispatch(_action: NavigationAction) {},
 }
-/* eslint-enable */
+export type AppStackParamList = {
+  // Welcome: undefined
+  AuthenticationNavigator: NavigatorScreenParams<AuthenticationNavigatorParamList>
+  MainNavigator: NavigatorScreenParams<MainNavigatorParamList>
+  SplashScreen: undefined
+}
 
-export const navigationRef = createNavigationContainerRef()
+
+export const navigationRef = createNavigationContainerRef<AppStackParamList>()
 
 /**
  * Gets the current screen from any navigation state.
@@ -121,8 +129,9 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
   return { onNavigationStateChange, restoreState, isRestored, initialNavigationState }
 }
 
-export function navigate(name: any, params?: any) {
+export function navigate(name: unknown, params?: unknown) {
   if (navigationRef.isReady()) {
+    // @ts-expect-error
     navigationRef.navigate(name as never, params as never)
   }
 }
