@@ -46,7 +46,6 @@
 
 ```bash
 # pull source
-git clone https://github.com/bonnguyenitc/react-native-starter.git
 
 # install:
 yarn
@@ -117,7 +116,7 @@ And more in package.json. Check it!
 ├── utils
 ```
 
-## Folder for a feature
+## Folder for a modules
 
 ##
 
