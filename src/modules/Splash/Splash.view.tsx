@@ -1,12 +1,13 @@
 import React from 'react';
-
-import {View, Text} from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const SplashView: React.FC = function () {
   return (
-    <View>
-      <Text>SplashView</Text>
-    </View>
+    <SafeAreaView style={{ backgroundColor: 'white' }}>
+      <View pointerEvents="none">
+        <Text>SplashView</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 export default SplashView;

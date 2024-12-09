@@ -4,7 +4,8 @@ import {View, Text} from 'react-native';
 
 const LoginView: React.FC = function () {
   return (
-    <View>
+          <View pointerEvents="none">
+
       <Text>LoginView</Text>
     </View>
   );

@@ -1,4 +1,4 @@
-import { Translations } from "./en"
+import { Translations } from './en';
 
 export type RecursiveKeyOfHandleValue<
   TValue,

@@ -1,2 +1,2 @@
-export * from './AppNavigator'
-export * from './utils'
+// export * from '@/navigators/AppNavigator';
+// export * from '@/navigators/utils';

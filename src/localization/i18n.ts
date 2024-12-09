@@ -1,8 +1,11 @@
-import i18next from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import {en} from './en'
-import {vi} from './vi'
-import { convertLanguageJsonToObject, translations } from './translate';
+/* eslint-disable no-param-reassign */
+
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { en } from './en';
+import { vi } from './vi';
+import { convertLanguageJsonToObject, translations } from './translations';
+
 convertLanguageJsonToObject(en, translations, '');
 
 export const resources = {
@@ -12,7 +15,7 @@ export const resources = {
   vi: {
     translation: vi,
   },
-  "en-US": {
+  'en-US': {
     translation: en,
   },
 };
@@ -23,6 +26,6 @@ i18next.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
-})
+});
 
-export default i18next
+export default i18next;

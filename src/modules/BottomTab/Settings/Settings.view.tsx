@@ -4,7 +4,8 @@ import {View, Text} from 'react-native';
 
 const SettingsView: React.FC = function () {
   return (
-    <View>
+          <View pointerEvents="none">
+
       <Text>SettingsView</Text>
     </View>
   );
