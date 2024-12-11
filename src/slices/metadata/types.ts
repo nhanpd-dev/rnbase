@@ -1,3 +1,3 @@
 export interface MetadataState {
-  authenticated: boolean
+  authenticated: boolean;
 }

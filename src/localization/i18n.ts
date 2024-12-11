@@ -15,7 +15,7 @@ i18next.use(initReactI18next).init({
   },
 });
 
-const currentLang = getLanguageFromStorage()
-i18next.changeLanguage(currentLang)
+const currentLang = getLanguageFromStorage();
+i18next.changeLanguage(currentLang);
 
 export default i18next;

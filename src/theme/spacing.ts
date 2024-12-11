@@ -6,7 +6,7 @@ export const spacing = {
   huge: 64,
   sm: '8px',
   md: '12px',
-  lg: '24px'
-}
+  lg: '24px',
+};
 
-export type Spacing = typeof spacing
+export type Spacing = typeof spacing;

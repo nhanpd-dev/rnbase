@@ -3,13 +3,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { BackHandler } from 'react-native';
-import {
-  PartialState,
-  NavigationState,
-  NavigationAction,
-  createNavigationContainerRef,
-  NavigatorScreenParams,
-} from '@react-navigation/native';
+import { PartialState, NavigationState, NavigationAction, createNavigationContainerRef, NavigatorScreenParams } from '@react-navigation/native';
 import { AuthenticationNavigatorParamList } from './AuthenticationNavigator';
 import { MainNavigatorParamList } from './MainNavigator';
 
@@ -35,9 +29,7 @@ export const navigationRef = createNavigationContainerRef<AppStackParamList>();
 /**
  * Gets the current screen from any navigation state.
  */
-export function getActiveRouteName(
-  state: NavigationState | PartialState<NavigationState>,
-): string {
+export function getActiveRouteName(state: NavigationState | PartialState<NavigationState>): string {
   if (!state) return '';
 
   const route = state.routes[state.index || 0];
@@ -90,8 +82,7 @@ export function useBackButtonHandler(canExit: (routeName: string) => boolean) {
     BackHandler.addEventListener('hardwareBackPress', onBackPress);
 
     // Unsubscribe when we're done
-    return () =>
-      BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
   }, []);
 }
 
@@ -105,9 +96,7 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
 
   const routeNameRef = useRef<string | undefined>();
 
-  const onNavigationStateChange = (
-    state: NavigationState | PartialState<NavigationState>,
-  ) => {
+  const onNavigationStateChange = (state: NavigationState | PartialState<NavigationState>) => {
     const previousRouteName = routeNameRef.current;
     const currentRouteName = getActiveRouteName(state);
 

@@ -1,5 +1,5 @@
-import { Color } from "../light/colors";
-import { palette } from "../palette";
+import { Color } from '../light/colors';
+import { palette } from '../palette';
 
 export const colors: Color = {
   primary: palette.black,
@@ -12,5 +12,5 @@ export const colors: Color = {
   borderLight: 'rgba(58,52,51,0.05)',
   switch: palette.white,
   switchTrack: palette.black,
-  ...palette
+  ...palette,
 };

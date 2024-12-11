@@ -12,17 +12,9 @@ interface Props extends ViewProps {
   backgroundColor: string;
 }
 
-export const MotiColor: React.FC<PropsWithChildren<Props>> = ({
-  children,
-  backgroundColor,
-  ...props
-}) => {
+export const MotiColor: React.FC<PropsWithChildren<Props>> = ({ children, backgroundColor, ...props }) => {
   return (
-    <MotiView
-      transition={transitions.screen}
-      from={{ backgroundColor }}
-      animate={{ backgroundColor }}
-      {...props}>
+    <MotiView transition={transitions.screen} from={{ backgroundColor }} animate={{ backgroundColor }} {...props}>
       {children}
     </MotiView>
   );

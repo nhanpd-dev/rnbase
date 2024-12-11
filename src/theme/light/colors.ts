@@ -1,4 +1,4 @@
-import { palette } from "../palette";
+import { palette } from '../palette';
 
 export const colors = {
   primary: palette.white,
@@ -11,7 +11,7 @@ export const colors = {
   borderLight: 'rgba(58,52,51,0.05)',
   switch: palette.black,
   switchTrack: palette.white,
-  ...palette
+  ...palette,
 };
 
 export type Color = typeof colors;

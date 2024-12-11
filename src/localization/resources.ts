@@ -1,4 +1,4 @@
-import { saveString, STORAGE, loadString } from '@/utils/storage'
+import { saveString, STORAGE, loadString } from '@/utils/storage';
 import { en } from './en';
 import { vi } from './vi';
 
@@ -11,14 +11,13 @@ export const resources = {
   },
 };
 
-export type Languages = keyof typeof resources
-
+export type Languages = keyof typeof resources;
 
 export function saveLanguage(language: Languages) {
   saveString(STORAGE.LANGUAGE, language || 'en');
 }
 
 export function getLanguageFromStorage(): Languages {
-  const language = loadString(STORAGE.LANGUAGE) as Languages
-  return language || 'en'
+  const language = loadString(STORAGE.LANGUAGE) as Languages;
+  return language || 'en';
 }

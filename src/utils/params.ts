@@ -1,4 +1,4 @@
-import {ListParams} from '@/types/list';
+import { ListParams } from '@/types/list';
 
 export const parseParamsToQueryString = <T extends object>(params: T) => {
   const q = new URLSearchParams();
@@ -10,5 +10,4 @@ export const parseParamsToQueryString = <T extends object>(params: T) => {
   return q;
 };
 
-export const parseListParamsToQueryString = (params: ListParams) =>
-  parseParamsToQueryString<ListParams>(params);
+export const parseListParamsToQueryString = (params: ListParams) => parseParamsToQueryString<ListParams>(params);

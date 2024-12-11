@@ -1,7 +1,7 @@
-import { MMKV } from "react-native-mmkv"
+import { MMKV } from 'react-native-mmkv';
 
 export const storage = new MMKV({
-  id: "rnbase.mmkv.v1",
+  id: 'rnbase.mmkv.v1',
   // Issue when set encryptionKey on android
   // Can't save storage on android if data > 253 characters when first time installed app
   // upgrade react-native-mmkv to v3 fix this issue but v3 required enable New Architecture
@@ -13,13 +13,13 @@ export const storage = new MMKV({
   // - close app, reopen app => no storage data saved
   // - do something like: save data into storage
   // - close app, reopen app => everything saved
-  encryptionKey: "3#pX$7q!Fj9vK&8wZc@B1r%F!A",
+  encryptionKey: '3#pX$7q!Fj9vK&8wZc@B1r%F!A',
 });
 
 export const STORAGE = {
   LANGUAGE: 'LANGUAGE',
   USER_TOKEN: 'USER_TOKEN',
-  SELECTED_THEME: 'selectedTheme'
+  SELECTED_THEME: 'selectedTheme',
 };
 
 export function loadString(key: string): string | null {
@@ -29,10 +29,10 @@ export function loadString(key: string): string | null {
 
 export function saveString(key: string, value: string): boolean {
   try {
-    storage.set(key, value)
-    return true
+    storage.set(key, value);
+    return true;
   } catch (e) {
-    return false
+    return false;
   }
 }
 
@@ -43,7 +43,7 @@ export function saveString(key: string, value: string): boolean {
  */
 export function remove(key: string): void {
   try {
-    storage.delete(key)
+    storage.delete(key);
   } catch {}
 }
 
@@ -65,16 +65,16 @@ export const deleteToken = (): void => {
  */
 export function clear(): void {
   try {
-    storage.clearAll()
+    storage.clearAll();
   } catch {}
 }
 
 export function loadStogare<T>(key: string): T | null {
   try {
     const almostThere = loadString(key);
-    return <T>JSON.parse(almostThere ?? "") || null
+    return <T>JSON.parse(almostThere ?? '') || null;
   } catch {
-    return null
+    return null;
   }
 }
 
@@ -86,9 +86,9 @@ export function loadStogare<T>(key: string): T | null {
  */
 export function saveStogare<T>(key: string, value: T): boolean {
   try {
-    saveString(key, JSON.stringify(value))
-    return true
+    saveString(key, JSON.stringify(value));
+    return true;
   } catch {
-    return false
+    return false;
   }
 }

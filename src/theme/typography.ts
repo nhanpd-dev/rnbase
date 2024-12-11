@@ -35,6 +35,6 @@ export const typography = {
     fontFamily: 'Poppins',
     fontWeight: 'normal',
   },
-}
+};
 
-export type Typography = keyof typeof typography
+export type Typography = keyof typeof typography;

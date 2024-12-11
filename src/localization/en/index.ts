@@ -8,6 +8,6 @@ export const en = {
   auth,
   validation,
   error_message,
-}
+};
 
-export type Translations = typeof en
+export type Translations = typeof en;

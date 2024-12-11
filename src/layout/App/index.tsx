@@ -8,10 +8,7 @@ interface Props {
   title?: string;
 }
 
-export const HomeLayout: React.FC<PropsWithChildren<Props>> = ({
-  children,
-  title,
-}) => {
+export const HomeLayout: React.FC<PropsWithChildren<Props>> = ({ children, title }) => {
   return (
     <Screen>
       <Center>

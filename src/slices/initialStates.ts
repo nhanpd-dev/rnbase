@@ -14,26 +14,25 @@ const loading: LoadingState = {
   loadings: [],
 };
 const language: LanguageState = {
-  language: getLanguageFromStorage()
+  language: getLanguageFromStorage(),
 };
 
 // const errors: ErrorState = {
 //   error: null,
 // };
 
-
 export const theme: ThemeState = {
   selected: getThemeFromStorage(),
-}
+};
 
 export const auth: AuthState = {
   authenticated: false,
-}
+};
 
 export const initialStates: RootState = {
   metadata,
   loading,
   theme,
   language,
-  auth
+  auth,
 };

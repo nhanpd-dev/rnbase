@@ -7,7 +7,7 @@ export interface AppLocales {
 }
 
 export const appLocales: AppLocales[] = [
-  {name: 'common.languages.english', locale: 'en'},
+  { name: 'common.languages.english', locale: 'en' },
   {
     name: 'common.languages.vietnamese',
     locale: 'vi',

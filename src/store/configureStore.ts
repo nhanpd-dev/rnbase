@@ -16,14 +16,14 @@ export const configureAppStore = () => {
 
   const store = configureStore({
     reducer: createReducer(),
-    middleware: (getDefaultMiddleware) =>
+    middleware: getDefaultMiddleware =>
       getDefaultMiddleware({
         thunk: false,
         serializableCheck: false,
       }).concat(sagaMiddleware),
     devTools: process.env.NODE_ENV !== 'production',
-    enhancers: (getDefaultEnhancers) => getDefaultEnhancers().concat(enhancers),
+    enhancers: getDefaultEnhancers => getDefaultEnhancers().concat(enhancers),
   });
 
   return store;
-}
+};

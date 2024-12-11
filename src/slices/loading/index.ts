@@ -1,10 +1,10 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 import { createSlice } from '@/store/@reduxjs/toolkit';
 import { useInjectReducer } from '@/store/redux-injectors';
-import { useDispatch } from 'react-redux';
 import { initialStates } from '@/slices/initialStates';
 import { useSelectorData } from '@/slices/selectors';
-import { useMemo } from 'react';
 import { LoadingState } from './types';
 
 const name = 'loading';
@@ -29,10 +29,7 @@ export const useLoading = () => {
   const { actions } = slice;
 
   const state = useSelectorData(name) as LoadingState;
-  const loading = useMemo(
-    () => state.loadings.length > 0,
-    [state.loadings.length],
-  );
+  const loading = useMemo(() => state.loadings.length > 0, [state.loadings.length]);
   const addLoading = (payload: string) => dispatch(actions.addLoading(payload));
   const removeLoading = (payload: string) => dispatch(actions.removeLoading(payload));
   return { addLoading, removeLoading, ...state, loading };

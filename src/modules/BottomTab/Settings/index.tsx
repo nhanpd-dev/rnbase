@@ -7,5 +7,5 @@ import { lazyLoad } from '@/utils/loadable';
 
 export const SettingsScreen: React.FC = lazyLoad(
   () => import('./Settings.view'),
-  (module) => module.default,
+  module => module.default,
 );

@@ -7,13 +7,7 @@ export interface SpaceProps extends ViewProps {
   align?: FlexAlignType;
 }
 
-export const Space: React.FC<SpaceProps> = function ({
-  style = {},
-  height = 0,
-  width = '100%',
-  align = 'flex-start',
-  ...props
-}) {
+export const Space: React.FC<SpaceProps> = function ({ style = {}, height = 0, width = '100%', align = 'flex-start', ...props }) {
   const styles = [style, { height, width, align }];
 
   return <View {...props} style={styles} />;

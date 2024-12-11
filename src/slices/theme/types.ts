@@ -1,4 +1,4 @@
-import { ThemeKeyType } from "@/theme/themes";
+import { ThemeKeyType } from '@/theme/themes';
 
 export interface ThemeState {
   selected: ThemeKeyType;

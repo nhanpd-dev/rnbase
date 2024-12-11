@@ -1,16 +1,16 @@
-import { ViewStyle } from 'react-native'
+import { ViewStyle } from 'react-native';
 
-import { ViewProps } from '../types'
+import { ViewProps } from '../types';
 
-export type StyleName = 'flex_1'
+export type StyleName = 'flex_1';
 
 export const styles: { [key in StyleName]: ViewStyle } = {
   flex_1: {
     flex: 1,
   },
-}
+};
 
-export type ShadowName = 'normal'
+export type ShadowName = 'normal';
 
 export const shadows: { [key in ShadowName]: ViewProps } = {
   normal: {
@@ -20,7 +20,7 @@ export const shadows: { [key in ShadowName]: ViewProps } = {
     shadowOpacity: 0.3,
     shadowRadius: 10,
   },
-}
+};
 
 export const borderRadiusSizes = {
   tiny: 4,
@@ -29,4 +29,4 @@ export const borderRadiusSizes = {
   large: 24,
   xl: 32,
   huge: 64,
-}
+};

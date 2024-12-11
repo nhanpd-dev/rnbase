@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable no-param-reassign */
 import { PayloadAction } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { createSlice } from '@/store/@reduxjs/toolkit';
@@ -14,10 +16,7 @@ const slice = createSlice({
   name,
   initialState,
   reducers: {
-    doLogin: (
-      state,
-      action: PayloadAction<{ email: string; password: string }>,
-    ) => {},
+    doLogin: (state, action: PayloadAction<{ email: string; password: string }>) => {},
     doLoginSuccess: (state, action: PayloadAction<AuthState>) => {
       state.authenticated = action.payload.authenticated;
     },
@@ -31,17 +30,13 @@ const slice = createSlice({
 export const { actions, reducer } = slice;
 
 export const useAuth = () => {
-  const { actions, name, reducer } = slice;
-
   useInjectReducer({ key: name, reducer });
   useInjectSaga({ key: slice.name, saga });
   const dispatch = useDispatch();
 
-  const doLogin = (payload: { email: string; password: string }) =>
-    dispatch(actions.doLogin(payload));
+  const doLogin = (payload: { email: string; password: string }) => dispatch(actions.doLogin(payload));
   const state = useSelectorData(name) as AuthState;
-  const setAuthentication = (payload: boolean) =>
-    dispatch(actions.setAuthentication(payload));
+  const setAuthentication = (payload: boolean) => dispatch(actions.setAuthentication(payload));
   const doLogout = () => dispatch(actions.doLogout());
   return {
     doLogin,

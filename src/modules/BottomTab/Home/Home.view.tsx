@@ -1,12 +1,15 @@
 import React from 'react';
-
-import {View, Text} from 'react-native';
+import { HomeLayout } from '@/layout/App';
+import { Button } from '@/components/common/Button';
+import { translate } from '@/localization/translate';
+import { useAuth } from '@/slices/auth';
 
 const HomeView: React.FC = function () {
+  const { doLogout } = useAuth();
   return (
-    <View pointerEvents="none">
-      <Text>HomeView</Text>
-    </View>
+    <HomeLayout>
+      <Button onPress={doLogout}>{translate('auth.logout')}</Button>
+    </HomeLayout>
   );
 };
 export default HomeView;

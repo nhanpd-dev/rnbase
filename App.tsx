@@ -1,9 +1,9 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {ThemeProvider} from '@/theme/ThemeProvider';
-import {AppNavigator} from '@/navigators/appNavigator';
-import {configureAppStore} from './src/store/configureStore';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@/theme/ThemeProvider';
+import { AppNavigator } from '@/navigators/appNavigator';
+import { configureAppStore } from './src/store/configureStore';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export const store = configureAppStore();
 
