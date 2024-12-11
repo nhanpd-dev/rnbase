@@ -1,0 +1,7 @@
+{
+  "fieldRequired": "Field {{field}} is required.",
+  "auth": {
+    "email_format": "Incorrect email format.",
+    "min_password": "Password must be at least 6 characters."
+  }
+}

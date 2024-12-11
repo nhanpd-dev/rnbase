@@ -1,0 +1,12 @@
+{
+  "ok": "OK",
+  "cancel": "Cancel",
+  "back": "Back",
+  "save": "Save",
+  "languages": {
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "delete": "Delete",
+  "change_language": "Change Language"
+}
