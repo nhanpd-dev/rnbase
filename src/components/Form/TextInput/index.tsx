@@ -12,13 +12,10 @@ import { translate } from '@/localization/translate'
 import { TxKeyPath } from '@/localization/types'
 
 interface TextInputProps extends RNTextInputProps, UseControllerProps {
-  label?: string
-  defaultValue?: string
-  icon?: ImageURISource
+  defaultValue?: string;
 }
 
 const Wrapper = styled.View`
-  width: '100%';
   border-width: 1px;
   border-radius: ${({ theme }) => theme.spacing.md};
   height: 42px;
@@ -29,7 +26,7 @@ const Wrapper = styled.View`
 
 export const TextInput: React.FC<TextInputProps> = props => {
   const { control } = useFormContext()
-  const { label, name, rules, defaultValue, icon, ...inputProps } = props
+  const { name, rules, defaultValue, ...inputProps } = props
 
   const {
     field: { onChange, value },
@@ -50,7 +47,9 @@ export const TextInput: React.FC<TextInputProps> = props => {
           {...inputProps}
         />
       </Wrapper>
-      {error && <Text style={{ marginTop: 4, color: 'red' }}>{translate(error.message as TxKeyPath)}</Text>}
+      {error && (
+        <Text style={{ marginTop: 4, color: 'red' }}>{translate(error.message as TxKeyPath)}</Text>
+      )}
     </>
   )
 }
