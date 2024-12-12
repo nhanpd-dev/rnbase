@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from '@/theme/ThemeProvider';
 import { AppNavigator } from '@/navigators/appNavigator';
 import { configureAppStore } from './src/store/configureStore';
+import 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export const store = configureAppStore();

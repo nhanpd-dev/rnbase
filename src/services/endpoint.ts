@@ -1,6 +1,6 @@
 const END_POINT = {
   AUTH: {
-    LOGIN: '/auth/sign-in',
+    LOGIN: '/access/shop/login',
   },
 };
 

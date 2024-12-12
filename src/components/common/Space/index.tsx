@@ -1,4 +1,5 @@
 import React from 'react';
+import { ViewStyle } from 'react-native';
 import { FlexAlignType, View, ViewProps } from 'react-native';
 
 export interface SpaceProps extends ViewProps {
@@ -7,8 +8,8 @@ export interface SpaceProps extends ViewProps {
   align?: FlexAlignType;
 }
 
-export const Space: React.FC<SpaceProps> = function ({ style = {}, height = 0, width = '100%', align = 'flex-start', ...props }) {
-  const styles = [style, { height, width, align }];
+export const Space: React.FC<SpaceProps> = function ({  height = 0, width = '100%', align = 'flex-start', ...props }) {
+  const styles: ViewStyle = [props.style, { height, width }];
 
   return <View {...props} style={styles} />;
 };

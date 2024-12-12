@@ -1,13 +1,18 @@
-import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, {
+  AxiosInstance,
+  InternalAxiosRequestConfig,
+  AxiosResponse,
+} from 'axios';
 import { ListParams } from '@/types/list';
 import { parseListParamsToQueryString } from '@/utils/params';
 import { store } from '../../App';
 import { BASE_URL } from '@/constants';
 import { readToken, deleteToken } from '@/utils/storage';
+import { AppError, AppResponse } from './types';
 
-const logOnDev = (message: string) => {
+const logOnDev = (message: string, data?: any) => {
   if (process.env.NODE_ENV !== 'production') {
-    console.log(message);
+    console.log(message, data);
   }
 };
 const showErrorApi = (data: any) => {
@@ -20,8 +25,6 @@ const showErrorApi = (data: any) => {
   }
 };
 
-const responseBody = <T>(response: AxiosResponse<T>) => <T>response.data;
-
 const getToken = () => {
   const userToken = readToken();
   return userToken || '';
@@ -33,7 +36,9 @@ const requestConfig = {
 
 const request: AxiosInstance = axios.create(requestConfig);
 
-const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
+const onRequest = (
+  config: InternalAxiosRequestConfig,
+): InternalAxiosRequestConfig => {
   // Set Headers Here
   // Check Authentication Here
   const token = getToken();
@@ -41,20 +46,19 @@ const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConf
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  console.log('🚀 [API] CONFIG: ', config);
+  logOnDev(`🚨 [API] | CONFIG: `, config);
 
   return config;
 };
 
-const onResponse = (response: AxiosResponse): AxiosResponse => {
-  // const { method, url } = response.config;
-  // const { status } = response;
-  return response.data;
-};
+const onResponse = (response: AxiosResponse): AxiosResponse['data'] =>
+  response.data;
 
-const onErrorResponse = (error: AxiosError | Error): Promise<AxiosError | Error> => {
+const onErrorResponse = (
+  error: AppError | Error,
+): Promise<AppError | Error> => {
   if (axios.isAxiosError(error)) {
-    console.log('🚀 [API] ERROR: ', { error });
+    logOnDev(`🚨 [API] | isAxiosError: `, error);
     const { response } = error;
     const { status, data } = response ?? {};
     if (status === 401 || status === 403) {
@@ -77,9 +81,21 @@ const onErrorResponse = (error: AxiosError | Error): Promise<AxiosError | Error>
 request.interceptors.request.use(onRequest, onErrorResponse);
 request.interceptors.response.use(onResponse, onErrorResponse);
 
-export const APIS = {
-  get: <T>(url: string) => request.get<T>(url).then(responseBody<T>),
-  getList: <T>(url: string, params: ListParams) => request.get<T>(`${url}?${parseListParamsToQueryString(params)}`).then(responseBody<T>),
-  post: <T>(url: string, data: T) => request.post(url, data).then(responseBody<T>),
+const responseBody = <R = any>(response: AppResponse<R>) =>
+  <R>response.metadata;
+
+export const Api = {
+  get: <R>(url: string) =>
+    request
+      .get<R>(url)
+      .then(response => responseBody<R>(response as unknown as AppResponse<R>)),
+  getList: <R>(url: string, params: ListParams) =>
+    request
+      .get<R>(`${url}?${parseListParamsToQueryString(params)}`)
+      .then(response => responseBody<R>(response as unknown as AppResponse<R>)),
+  post: <R = any, D = any>(url: string, data: D) =>
+    request
+      .post(url, data)
+      .then(response => responseBody<R>(response as unknown as AppResponse<R>)),
 };
 export default request;

@@ -1,27 +1,23 @@
 import React from 'react';
-import { View, ViewProps } from 'react-native';
+import { ViewProps } from 'react-native';
 import styled from 'styled-components/native';
-import { Color, ColorName } from '@/theme/light/colors';
+import { ColorName } from '@/theme/light/colors';
 
-export interface CenterProps extends ViewProps {
-  horizontal?: boolean;
-  vertical?: boolean;
+interface StyledProps {
+  isHorizontal?: boolean;
   background?: ColorName;
 }
+export interface CenterProps extends ViewProps, StyledProps {}
 
-const Box = styled(View)<{
-  horizontal?: boolean;
-  vertical?: boolean;
-  background?: Color;
-}>`
-  align-items: ${({ horizontal, vertical }) => ((horizontal && !vertical) || (!horizontal && !vertical) ? 'center' : 'flex-start')};
-  justify-content: ${({ horizontal, vertical }) => ((vertical && !horizontal) || (!horizontal && !vertical) ? 'center' : 'flex-start')};
-  background: ${({ background, theme }) => theme.colors[background] || theme.colors.transparent};
+const Box = styled.View<StyledProps>`
+  align-items: ${({ isHorizontal = false }) => !isHorizontal ? 'center' : 'flex-start'};
+  justify-content: ${({ isHorizontal = false }) => isHorizontal ? 'center' : 'flex-start'};
+  background: ${({ background = 'transparent', theme }) => theme.colors[background]};
 `;
 
-export const Center: React.FC<CenterProps> = ({ horizontal = false, vertical = false, children = null, ...props }) => {
+export const Center: React.FC<CenterProps> = ({ isHorizontal = false, children, ...props }) => {
   return (
-    <Box horizontal={horizontal} vertical={vertical} {...props}>
+    <Box isHorizontal={isHorizontal} {...props}>
       {children}
     </Box>
   );

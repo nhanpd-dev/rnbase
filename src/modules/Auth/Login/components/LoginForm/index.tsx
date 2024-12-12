@@ -22,8 +22,8 @@ export const LoginForm: React.FC = function () {
   const { t } = useTranslation();
   const form = useForm<LoginPayload>({
     defaultValues: {
-      email: 'nhanpd04@yopmail.com',
-      password: '12345678',
+      email: 'nhantest@example.com',
+      password: 'password1',
     },
     resolver: yupResolver(schema),
   });

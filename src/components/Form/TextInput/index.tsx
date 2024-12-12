@@ -12,10 +12,10 @@ interface TextInputProps extends RNTextInputProps, UseControllerProps {
 
 const Wrapper = styled.View`
   border-width: 1px;
-  border-radius: ${({ theme }) => theme.spacing.md};
+  border-radius: ${({ theme }) => `${theme.spacing.medium}px`};
   height: 42px;
-  padding-left: ${({ theme }) => theme.spacing.sm};
-  padding-right: ${({ theme }) => theme.spacing.sm};
+  padding-left: ${({ theme }) => `${theme.spacing.small}px`};
+  padding-right: ${({ theme }) => `${theme.spacing.small}px`};
   justify-content: center;
 `;
 

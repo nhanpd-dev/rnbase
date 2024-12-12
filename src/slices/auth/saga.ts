@@ -5,12 +5,12 @@ import { sagaCustomize } from '../sagaCustomize';
 
 import { actions } from '.';
 import { deleteToken, persistToken } from '@/utils/storage';
-import { login } from '@/services';
+import { login, LoginResponse } from '@/services';
 
 export function* loginSaga({ payload, type }: PayloadAction<{ email: string; password: string }>) {
   yield sagaCustomize(function* () {
-    const { data } = yield call(login, payload);
-    persistToken(data.token || '');
+    const { tokens }: LoginResponse = yield call(login, payload);
+    persistToken(tokens.accessToken || '');
     yield put(actions.setAuthentication(true));
   }, type);
 }

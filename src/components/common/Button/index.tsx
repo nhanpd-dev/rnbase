@@ -7,6 +7,7 @@ import { spacing } from '@/theme/spacing';
 import { ColorName } from '@/theme/light/colors';
 import { Center } from '../Center';
 import { Text } from '../Text';
+import styled, {css} from 'styled-components/native';
 
 const styleDefault: ViewStyle = {
   padding: 8,
@@ -30,7 +31,29 @@ interface ButtonProps extends ViewProps {
   labelColor?: ColorName;
 }
 
-export const Button: React.FC<ButtonProps> = function ({ children, style = {}, onPress, shadow = false, custom = false, disabled = false, labelColor = 'primary', ...props }) {
+const StyledButton = styled(Center)<{ type?: string }>`
+  ${({ type }) => {
+    if (type === 'primary') {
+      return css`
+        width: 300px;
+      `;
+    }
+    return css`
+      width: 120px;
+    `;
+  }}
+`;
+
+export const Button: React.FC<ButtonProps> = function ({
+  children,
+  style = {},
+  onPress,
+  shadow = true,
+  custom = false,
+  disabled = false,
+  labelColor = 'primary',
+  ...props
+}) {
   return (
     <MotiPressable
       disabled={!onPress || disabled}
@@ -46,9 +69,16 @@ export const Button: React.FC<ButtonProps> = function ({ children, style = {}, o
           },
         [],
       )}>
-      <Center background="secondary" style={[!custom && styleDefault, style, shadow && SHADOW]} {...props}>
-        {typeof children === 'string' ? <Text color={labelColor}>{children}</Text> : children}
-      </Center>
+      <StyledButton
+        background="secondary"
+        style={[!custom && styleDefault, style, shadow && SHADOW]}
+        {...props}>
+        {typeof children === 'string' ? (
+          <Text color={labelColor}>{children}</Text>
+        ) : (
+          children
+        )}
+      </StyledButton>
     </MotiPressable>
   );
 };
