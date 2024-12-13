@@ -12,6 +12,7 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "clean-watchman": "watchman watch-del-all && watchman shutdown-server",
+    "fonts": "npx react-native-asset",
     "format": "prettier --write ./src"
   },
   "dependencies": {

@@ -22,4 +22,25 @@ export type FontWeight =
   | '800'
   | '900';
 
-  export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify';
+export type TextAlign = 'auto' | 'left' | 'right' | 'center' | 'justify';
+
+export type FontFamily =
+  | 'Poppins'
+  | 'Poppins-Black'
+  | 'Poppins-BlackItalic'
+  | 'Poppins-Bold'
+  | 'Poppins-BoldItalic'
+  | 'Poppins-ExtraBold'
+  | 'Poppins-ExtraBoldItalic'
+  | 'Poppins-ExtraLight'
+  | 'Poppins-ExtraLightItalic'
+  | 'Poppins-Italic'
+  | 'Poppins-Light'
+  | 'Poppins-LightItalic'
+  | 'Poppins-Medium'
+  | 'Poppins-MediumItalic'
+  | 'Poppins-Regular'
+  | 'Poppins-SemiBold'
+  | 'Poppins-SemiBoldItalic'
+  | 'Poppins-Thin'
+  | 'Poppins-ThinItalic';

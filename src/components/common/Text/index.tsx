@@ -2,13 +2,14 @@ import React from 'react';
 import { Text as TextRN, TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { ColorName } from '@/theme/light/colors';
-import { FontWeight, TextAlign } from '../types';
+import { FontFamily, FontWeight, TextAlign } from '../types';
 
 interface StyledProps {
   color?: ColorName;
   size?: number;
   fontWeight?: FontWeight;
   textAlign?: TextAlign;
+  fontFamily?: FontFamily;
 }
 
 const StyledText = styled(TextRN)<StyledProps>`
@@ -17,6 +18,7 @@ const StyledText = styled(TextRN)<StyledProps>`
   font-size: ${({ size }) => `${size || 16}px`};
   font-weight: ${({ fontWeight = 'normal' }) => fontWeight};
   text-align:  ${({ textAlign = 'auto' }) => textAlign};
+  font-family:  ${({ fontFamily = 'Poppins' }) => fontFamily};
 `;
 
 interface Props extends TextProps, StyledProps {}
