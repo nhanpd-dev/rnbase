@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 
-import { RootState } from '../store/RootState';
+import { RootState } from '../types/store';
 import { RootStateKeyType } from '../store/injector-typings';
 import { initialStates } from './initialStates';
 

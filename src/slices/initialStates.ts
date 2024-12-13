@@ -1,11 +1,11 @@
 import { getThemeFromStorage } from '@/theme/utils';
-import { RootState } from '../store/RootState';
 import { LoadingState } from './loading/types';
 import { MetadataState } from './metadata/types';
 import { ThemeState } from './theme/types';
 import { LanguageState } from './language/types';
 import { getLanguageFromStorage } from '@/localization/resources';
 import { AuthState } from './auth/types';
+import { RootState } from '@/types/store';
 
 const metadata: MetadataState = {
   authenticated: false,

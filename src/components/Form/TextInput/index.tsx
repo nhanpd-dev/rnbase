@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInputProps as RNTextInputProps, Text, ImageURISource, TextInput as RNTextInput } from 'react-native';
+import { TextInputProps as RNTextInputProps, Text, TextInput as RNTextInput } from 'react-native';
 
 import { useController, useFormContext, UseControllerProps } from 'react-hook-form';
 import styled from 'styled-components/native';

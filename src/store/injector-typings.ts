@@ -1,7 +1,7 @@
 import { Saga } from 'redux-saga';
 import { SagaInjectionModes } from 'redux-injectors';
 import { Reducer, Action } from '@reduxjs/toolkit';
-import { RootState } from './RootState';
+import { RootState } from '../types/store';
 
 interface AnyAction extends Action {
   [extraProps: string]: any;

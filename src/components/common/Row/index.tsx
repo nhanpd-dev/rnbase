@@ -1,10 +1,6 @@
 import React from 'react';
-import { View, ViewProps } from 'react-native';
+import { Box, BoxProps } from '../Box';
 
-export const Row: React.FC<ViewProps> = function ({ children, ...props }) {
-  return (
-    <View style={[{ flexDirection: 'row' }, props.style]} {...props}>
-      {children}
-    </View>
-  );
+export const Row: React.FC<BoxProps> = function ({ ...props }) {
+  return <Box horizontal {...props} />;
 };

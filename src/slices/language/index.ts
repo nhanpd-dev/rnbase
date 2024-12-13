@@ -22,7 +22,7 @@ const slice = createSlice({
 export const { actions: themeActions, reducer } = slice;
 
 export const useLanguageSlice = () => {
-  useInjectReducer({ key: slice.name, reducer: slice.reducer });
+  useInjectReducer({ key: slice.name, reducer });
   const { actions } = slice;
   const dispatch = useDispatch();
   const { language } = useSelectorData(name) as LanguageState;

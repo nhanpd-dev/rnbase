@@ -21,12 +21,12 @@ export const AuthLayout: React.FC<PropsWithChildren<AuthLayoutProps>> = ({ child
   return (
     <Screen safe={safe}>
       {isShowToggleDarkMode && (
-        <Row style={{ alignItems: 'flex-end', padding: spacing.large }}>
+        <Row style={{ padding: spacing.large }}>
           <Switch size={60} isActive={isDarkMode} onPress={toggleMode} />
         </Row>
       )}
       <Center style={{ paddingHorizontal: 16 }}>
-        <Text color="black" size={48}>
+        <Text size={48}>
           {title}
         </Text>
         <Space height={32} />

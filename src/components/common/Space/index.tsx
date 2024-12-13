@@ -1,15 +1,19 @@
 import React from 'react';
-import { ViewStyle } from 'react-native';
-import { FlexAlignType, View, ViewProps } from 'react-native';
+import { styled } from 'styled-components/native';
+import { Box, BoxProps } from '../Box';
 
-export interface SpaceProps extends ViewProps {
-  height?: number | string;
-  width?: number | string;
-  align?: FlexAlignType;
+interface StyledProps {
+  height?: number;
+  width?: number;
 }
 
-export const Space: React.FC<SpaceProps> = function ({  height = 0, width = '100%', align = 'flex-start', ...props }) {
-  const styles: ViewStyle = [props.style, { height, width }];
+export interface SpaceProps extends BoxProps, StyledProps {}
 
-  return <View {...props} style={styles} />;
+const Styled = styled(Box)<StyledProps>`
+  height: ${({ height }) => `${height}px`};
+  width: ${({ width }) => (width ? `${width}px` : 'auto')};
+`;
+
+export const Space: React.FC<SpaceProps> = function ({ ...props }) {
+  return <Styled {...props} />;
 };

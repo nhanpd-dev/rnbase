@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ViewStyle } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { MotiColor } from '@/components/MotiColor';
-import { spacing } from '@/theme/spacing';
 
-interface LayoutProps {
-  children: React.ReactNode;
+interface ScreenProps {
   safe?: boolean;
 }
 const styles: { [key: string]: ViewStyle } = {
@@ -15,7 +13,7 @@ const styles: { [key: string]: ViewStyle } = {
   },
 };
 
-export const Screen: React.FC<LayoutProps> = function ({ children, safe = false }) {
+export const Screen: React.FC<PropsWithChildren<ScreenProps>> = function ({ children, safe = false }) {
   const { colors } = useTheme();
   if (!safe)
     return (
