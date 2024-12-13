@@ -11,9 +11,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		7F8AE47A1A9A4B4DBBEAAA3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6DD2B98130644BAAC1C5D98 /* Colors.xcassets */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A9A7A18348DF83F2FC22F724 /* libPods-basern.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7D0974899CC1E5E4783C16 /* libPods-basern.a */; };
 		B670666F01E31F1122A3467C /* libPods-basern-basernTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F69DD176E8095AC5407A7D72 /* libPods-basern-basernTests.a */; };
+		C6D68B42058C48858EBCED50 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8F361E53BE463F89EFF6A5 /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +41,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = basern/main.m; sourceTree = "<group>"; };
 		48F20E07468D568ACB3CB7BB /* Pods-basern-basernTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basern-basernTests.release.xcconfig"; path = "Target Support Files/Pods-basern-basernTests/Pods-basern-basernTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = basern/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C6DD2B98130644BAAC1C5D98 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = basern/Colors.xcassets; sourceTree = "<group>"; };
 		D377DE1E0540AA2955A6E621 /* Pods-basern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basern.release.xcconfig"; path = "Target Support Files/Pods-basern/Pods-basern.release.xcconfig"; sourceTree = "<group>"; };
 		DFEEA75B18AF4070DCD1DA21 /* Pods-basern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basern.debug.xcconfig"; path = "Target Support Files/Pods-basern/Pods-basern.debug.xcconfig"; sourceTree = "<group>"; };
 		EB7D0974899CC1E5E4783C16 /* libPods-basern.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-basern.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F69DD176E8095AC5407A7D72 /* libPods-basern-basernTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-basern-basernTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8F361E53BE463F89EFF6A5 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = basern/BootSplash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				FB8F361E53BE463F89EFF6A5 /* BootSplash.storyboard */,
+				C6DD2B98130644BAAC1C5D98 /* Colors.xcassets */,
 			);
 			name = basern;
 			sourceTree = "<group>";
@@ -242,6 +248,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C6D68B42058C48858EBCED50 /* BootSplash.storyboard in Resources */,
+				7F8AE47A1A9A4B4DBBEAAA3F /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

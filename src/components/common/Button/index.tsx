@@ -56,6 +56,7 @@ export const Button: React.FC<ButtonProps> = function ({
           shadowOpacity: 0.4,
           shadowRadius: 10,
           elevation: 5,
+          backgroundColor: theme.colors[borderColor],
         }}>
         <StyledButton
           disabled={disabled}

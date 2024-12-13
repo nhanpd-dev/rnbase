@@ -400,7 +400,7 @@ PODS:
     - React-jsi (= 0.72.5)
     - React-logger (= 0.72.5)
     - React-perflogger (= 0.72.5)
-  - RNBootSplash (5.5.3):
+  - RNBootSplash (6.3.2):
     - React-Core
   - RNGestureHandler (2.16.1):
     - RCT-Folly (= 2021.07.22.00)
@@ -612,7 +612,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 05bede38cb51ae152f31707022e881ee9ae970ab
   React-utils: 7a9918a1ffdd39aba67835d42386f592ea3f8e76
   ReactCommon: a77b3916d0d39113b5f0de714a0acd47c9d17c3a
-  RNBootSplash: e025d4ee98d942ee6c8b495a6fe66339a6b5f6dd
+  RNBootSplash: 3a44c2c3ebfce98254de887ceed22c4941c8c6c5
   RNGestureHandler: 83e5f2116076f0402da654c0541f7fca20d77775
   RNReanimated: fdbaa9c964bbab7fac50c90862b6cc5f041679b9
   RNScreens: 50ad6e3dbea9023272b3aa753e3ee2720b0c9b8f
