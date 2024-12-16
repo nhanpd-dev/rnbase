@@ -3,7 +3,7 @@ import axios, {
   InternalAxiosRequestConfig,
   AxiosResponse,
 } from 'axios';
-import { ListParams } from '@/types/list';
+import { ListParams } from 'app-list';
 import { parseListParamsToQueryString } from '@/utils/params';
 import { store } from '../../App';
 import { BASE_URL } from '@/constants';

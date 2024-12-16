@@ -6,7 +6,8 @@ import i18next from './i18n';
 
 import { ConvertedToObjectType, TxKeyPath } from './types';
 
-export const translations: ConvertedToObjectType<Translations> = {} as ConvertedToObjectType<Translations>;
+export const translations: ConvertedToObjectType<Translations> =
+  {} as ConvertedToObjectType<Translations>;
 
 /**
  * Translates text.
